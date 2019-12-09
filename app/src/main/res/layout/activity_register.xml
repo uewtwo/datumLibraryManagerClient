@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.datumlibrarymanager.register.RegisterActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCameraForRental"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Scan Barcode or QR code"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/boxIsbn" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/boxIsbn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCameraForRental"
+        app:layout_constraintBottom_toTopOf="@+id/boxNumber" >
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleIsbn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ISBN: "
+            app:layout_constraintStart_toStartOf="@+id/boxIsbn"
+            app:layout_constraintEnd_toStartOf="@+id/barcodeReadResult"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/barcodeReadResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Result will be here"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000"
+            app:layout_constraintStart_toEndOf="@+id/titleIsbn"
+            app:layout_constraintEnd_toEndOf="@+id/boxIsbn"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="parent" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/boxNumber"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boxIsbn"
+        app:layout_constraintBottom_toTopOf="@+id/registerButton" >
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Num: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/numberOfBooks"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/numberOfBooks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="#000"
+            app:layout_constraintStart_toEndOf="@+id/titleNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="parent" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/registerButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boxNumber"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
