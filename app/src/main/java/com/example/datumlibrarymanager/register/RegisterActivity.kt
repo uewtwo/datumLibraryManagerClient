@@ -2,7 +2,6 @@ package com.example.datumlibrarymanager.register
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -14,7 +13,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
 import com.example.datumlibrarymanager.R
-import com.example.datumlibrarymanager.common.CustomScanner
+import com.example.datumlibrarymanager.common.CustomBarcodeScanner
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
 import kotlinx.android.synthetic.main.activity_register.*
@@ -42,7 +41,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun scanBarcode() {
-        val scanner = CustomScanner(this)
+        val scanner = CustomBarcodeScanner(this)
         scanner.initiateScan()
     }
 

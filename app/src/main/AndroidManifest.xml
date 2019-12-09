@@ -41,8 +41,14 @@
             android:name=".stocktake.StocktakeActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".common.ConfirmActivity"
+            android:name=".common.ConfirmManager"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".common.ICReaderActivity"
+            android:screenOrientation="landscape"  />
+        <activity
+            android:name=".return.ReturnActivity"
+            android:screenOrientation="landscape"  />
     </application>
 
 </manifest>

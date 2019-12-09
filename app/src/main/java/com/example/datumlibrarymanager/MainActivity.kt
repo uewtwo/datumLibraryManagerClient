@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.datumlibrarymanager.`return`.ReturnActivity
 import com.example.datumlibrarymanager.borrow.BorrowActivity
+import com.example.datumlibrarymanager.common.ICReaderActivity
 import com.example.datumlibrarymanager.register.RegisterActivity
 import com.example.datumlibrarymanager.search.SearchActivity
 import com.example.datumlibrarymanager.stocktake.StocktakeActivity
@@ -43,6 +44,12 @@ class MainActivity : AppCompatActivity() {
 
         stocktakeButton.setOnClickListener {
             val intent = Intent(this@MainActivity, StocktakeActivity::class.java)
+            startActivity(intent)
+        }
+
+        // for debug
+        icReaderButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, ICReaderActivity::class.java)
             startActivity(intent)
         }
     }
