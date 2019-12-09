@@ -7,6 +7,7 @@ import com.example.datumlibrarymanager.`return`.ReturnActivity
 import com.example.datumlibrarymanager.borrow.BorrowActivity
 import com.example.datumlibrarymanager.register.RegisterActivity
 import com.example.datumlibrarymanager.search.SearchActivity
+import com.example.datumlibrarymanager.stocktake.StocktakeActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -30,13 +31,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        searchButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, SearchActivity::class.java)
+            startActivity(intent)
+        }
+
         registerButton.setOnClickListener {
             val intent = Intent(this@MainActivity, RegisterActivity::class.java)
             startActivity(intent)
         }
 
-        searchButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, SearchActivity::class.java)
+        stocktakeButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, StocktakeActivity::class.java)
             startActivity(intent)
         }
     }

@@ -69,12 +69,12 @@
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:text="Register"
-            app:layout_constraintBottom_toTopOf="@id/inventoryCheckButton"
+            app:layout_constraintBottom_toTopOf="@id/stocktakeButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/inventoryCheckButton"
+            android:id="@+id/stocktakeButton"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:text="InventoryCheck"
