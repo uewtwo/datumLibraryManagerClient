@@ -32,12 +32,6 @@
             android:name=".register.RegisterActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".common.CaptureActivityPortrait"
-            android:screenOrientation="landscape"
-            android:stateNotNeeded="true"
-            android:theme="@style/zxing_CaptureTheme"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity
             android:name=".stocktake.StocktakeActivity"
             android:screenOrientation="landscape" />
         <activity
@@ -49,6 +43,12 @@
         <activity
             android:name=".return.ReturnActivity"
             android:screenOrientation="landscape"  />
+        <activity
+            android:name=".common.CaptureActivityPortrait"
+            android:screenOrientation="landscape"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>

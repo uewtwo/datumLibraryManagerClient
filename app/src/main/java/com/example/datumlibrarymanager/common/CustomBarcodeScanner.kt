@@ -1,21 +1,20 @@
 package com.example.datumlibrarymanager.common
 
-import android.app.Activity
 import android.content.Context
 import android.hardware.camera2.CameraCharacteristics
 import android.hardware.camera2.CameraManager
+import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
 
-class CustomBarcodeScanner(activity: Activity) {
-    private val rootActivity: Activity = activity
+class CustomBarcodeScanner(activity: AppCompatActivity) {
+    private val rootActivity: AppCompatActivity = activity
 
-    fun initiateScan() {
-
+    fun initiateScan(message: String = "Scan a barcode.") {
         val integrator = IntentIntegrator(rootActivity)
         integrator
             .setCaptureActivity(CaptureActivityPortrait::class.java)
             .setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES)
-            .setPrompt("Scan a barcode.")
+            .setPrompt(message)
             .setCameraId(getFrontCameraId())
             .setBeepEnabled(false)
             .setBarcodeImageEnabled(false)
@@ -39,4 +38,6 @@ class CustomBarcodeScanner(activity: Activity) {
 
         return frontCameraId
     }
+
+
 }

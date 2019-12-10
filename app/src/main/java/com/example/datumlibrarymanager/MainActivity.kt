@@ -1,8 +1,14 @@
 package com.example.datumlibrarymanager
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.provider.MediaStore
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.datumlibrarymanager.`return`.ReturnActivity
 import com.example.datumlibrarymanager.borrow.BorrowActivity
 import com.example.datumlibrarymanager.common.ICReaderActivity
@@ -19,9 +25,46 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    // TODO: permission denied になった場合の処理
     override fun onResume() {
         super.onResume()
 
+        checkFeature()
+        setOnMainClickListener()
+
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int,
+                                            permissions: Array<out String>,
+                                            grantResults: IntArray) {
+        if (requestCode == RegisterActivity.CAMERA_PERMISSION_REQUEST_CODE) {
+            if (!(grantResults.isNotEmpty() &&
+                grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                finish()
+            }
+        }
+    }
+
+    // 使用アプリの存在確認，及び権限確認をまとめて行う
+    private fun checkFeature() {
+        Intent(MediaStore.ACTION_IMAGE_CAPTURE).resolveActivity(packageManager)?.let {
+            if (!checkCameraPermission()) {
+                grantCameraPermission()
+            }
+        } ?: Toast.makeText(this, "カメラを扱うアプリがありません", Toast.LENGTH_LONG).show()
+    }
+
+    private fun checkCameraPermission() = PackageManager.PERMISSION_GRANTED ==
+            ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.CAMERA)
+
+    private fun grantCameraPermission() =
+        ActivityCompat.requestPermissions(this,
+            arrayOf(Manifest.permission.CAMERA),
+            RegisterActivity.CAMERA_PERMISSION_REQUEST_CODE
+        )
+
+
+    private fun setOnMainClickListener() {
         borrowButton.setOnClickListener {
             val intent = Intent(this@MainActivity, BorrowActivity::class.java)
             startActivity(intent)
