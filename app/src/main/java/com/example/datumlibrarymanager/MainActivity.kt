@@ -95,5 +95,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, ICReaderActivity::class.java)
             startActivity(intent)
         }
+        icReaderButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, ICReaderActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

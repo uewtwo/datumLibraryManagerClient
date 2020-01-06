@@ -5,9 +5,20 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="UNDER \nDEVELOPMENT!!"
+        android:layout_height="wrap_content"
+        android:text="Please place the card in front of the face-camera."
         android:autoSizeTextType="uniform"
-        android:maxLines="2"
+        android:maxLines="1"
         android:gravity="center"/>
+    <Button
+        android:id="@+id/icreaderScanning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ICReader" />
+    <Button
+        android:id="@+id/httpTest1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text='HTTP Request test 1' />
+
 </LinearLayout>
